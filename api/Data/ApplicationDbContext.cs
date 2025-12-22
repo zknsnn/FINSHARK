@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using api.Models;
 using Microsoft.EntityFrameworkCore;
 namespace api.Data
 {
@@ -9,8 +10,8 @@ namespace api.Data
     {
         public ApplicationDbContext(DbContextOptions options) : base(options){}
         
-        public DbSet<api.Models.Stock> Stocks { get; set; }
-        public DbSet<api.Models.Comment> Comments { get; set; }
+        public DbSet<Stock> Stocks { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
     }
 }
