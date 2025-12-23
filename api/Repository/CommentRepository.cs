@@ -18,14 +18,23 @@ namespace api.Repository
             _context = context;
         }
 
-        public Task<Comment> CreateAsync(Comment comment)
+        public async Task<Comment> CreateAsync(Comment comment)
         {
-            throw new NotImplementedException();
+            await _context.Comments.AddAsync(comment);
+            await _context.SaveChangesAsync();
+            return comment;
         }
 
-        public Task<Comment?> DeleteAsync(int id)
+        public async Task<Comment?> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            var comment = await _context.Comments.FirstOrDefaultAsync(c => c.Id == id);
+              if (comment == null)
+            {
+                return null;
+            }
+            _context.Comments.Remove(comment);
+            await _context.SaveChangesAsync();
+            return comment;
         }
 
         public async Task<List<Comment>> GetAllAsync()
@@ -35,12 +44,21 @@ namespace api.Repository
 
         public Task<Comment?> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+          var comment  = _context.Comments.FirstOrDefaultAsync(c => c.Id == id);
+            return comment;
         }
 
-        public Task<Comment?> UpdateAsync(int id, Comment comment)
+        public async Task<Comment?> UpdateAsync(int id, Comment comment)
         {
-            throw new NotImplementedException();
+            var existingComment = await _context.Comments.FindAsync(id);
+            if (existingComment == null)
+            {
+                return null;
+            }
+            existingComment.Title = comment.Title;
+            existingComment.Content = comment.Content;
+            await _context.SaveChangesAsync();
+            return existingComment;
         }
     }
 }
