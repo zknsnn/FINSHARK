@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.Data;
 using api.Dtos.Stock;
+using api.Helper;
 using api.Interface;
 using api.Mappers;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +32,20 @@ namespace api.Controller
                 return BadRequest(ModelState);
 
             var stocks = await _stockRepository.GetAllAsync();
+            var stocksDto = stocks.Select(s => s.ToStockDto()).ToList();
+
+            return Ok(stocksDto);
+        }
+
+        [HttpGet("filtered")]
+        public async Task<IActionResult> GetFilteredStocksAsync(
+            [FromQuery] QueryObjects queryObjects
+        )
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var stocks = await _stockRepository.GetFilteredStocksAsync(queryObjects);
             var stocksDto = stocks.Select(s => s.ToStockDto()).ToList();
 
             return Ok(stocksDto);

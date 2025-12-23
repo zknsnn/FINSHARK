@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using api.Data;
 using api.Dtos.Stock;
+using api.Helper;
 using api.Interface;
 using api.Models;
 using Microsoft.EntityFrameworkCore;
@@ -43,9 +44,30 @@ namespace api.Repository
             return _context.Stocks.Include(s => s.Comments).ToListAsync();
         }
 
+        
+
         public async Task<Stock?> GetByIdAsync(int id)
         {
             return await _context.Stocks.Include(s => s.Comments).FirstOrDefaultAsync(s => s.Id == id);
+        }
+
+        public Task<List<Stock>> GetFilteredStocksAsync(QueryObjects queryObjects)
+        {   
+            // Start with all stocks
+            var stocks = _context.Stocks.AsQueryable();
+            // Apply filters based on QueryObjects
+            if (!string.IsNullOrEmpty(queryObjects.Symbol))
+            {
+                stocks = stocks.Where(s => s.Symbol.Contains(queryObjects.Symbol));
+            }
+            // Example filter for CompanyName
+            if (!string.IsNullOrEmpty(queryObjects.CompanyName))
+            {
+                stocks = stocks.Where(s => s.CompanyName.Contains(queryObjects.CompanyName));
+            }
+            // Add more filters as needed
+            // Return the filtered list
+            return stocks.ToListAsync();
         }
 
         public Task<bool> StockExists(int id)
