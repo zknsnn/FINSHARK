@@ -44,15 +44,15 @@ namespace api.Repository
             return _context.Stocks.Include(s => s.Comments).ToListAsync();
         }
 
-        
-
         public async Task<Stock?> GetByIdAsync(int id)
         {
-            return await _context.Stocks.Include(s => s.Comments).FirstOrDefaultAsync(s => s.Id == id);
+            return await _context
+                .Stocks.Include(s => s.Comments)
+                .FirstOrDefaultAsync(s => s.Id == id);
         }
 
         public Task<List<Stock>> GetFilteredStocksAsync(QueryObjects queryObjects)
-        {   
+        {
             // Start with all stocks
             var stocks = _context.Stocks.AsQueryable();
             // Apply filters based on QueryObjects
@@ -65,9 +65,22 @@ namespace api.Repository
             {
                 stocks = stocks.Where(s => s.CompanyName.Contains(queryObjects.CompanyName));
             }
-            // Add more filters as needed
-            // Return the filtered list
-            return stocks.ToListAsync();
+            // Apply sorting based on QueryObjects
+            if (!string.IsNullOrEmpty(queryObjects.SortBy))
+            {
+                if (queryObjects.SortBy.Equals("Symbol", StringComparison.OrdinalIgnoreCase))
+                {
+                    stocks = queryObjects.IsSortAscending
+                        ? stocks.OrderBy(s => s.Symbol)
+                        : stocks.OrderByDescending(s => s.Symbol);
+                }
+            }
+
+            // Apply pagination based on QueryObjects
+            var skipNumber = (queryObjects.PageNumber - 1) * queryObjects.PageSize;
+
+            // Return the final list with applied filters, sorting, and pagination
+            return stocks.Skip(skipNumber).Take(queryObjects.PageSize).ToListAsync();
         }
 
         public Task<bool> StockExists(int id)
