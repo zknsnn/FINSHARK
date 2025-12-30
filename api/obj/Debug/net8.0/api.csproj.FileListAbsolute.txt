@@ -1,12 +1,3 @@
-C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\api.csproj.AssemblyReference.cache
-C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\api.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\api.AssemblyInfoInputs.cache
-C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\api.AssemblyInfo.cs
-C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\api.csproj.CoreCompileInputs.cache
-C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\api.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\api.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\api.sourcelink.json
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\appsettings.json
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\api.staticwebassets.endpoints.json
@@ -19,8 +10,6 @@ C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\ne
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\Humanizer.dll
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -36,9 +25,6 @@ C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\ne
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
-C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
-C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\Microsoft.Identity.Client.dll
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
@@ -132,6 +118,15 @@ C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\ne
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\api.csproj.AssemblyReference.cache
+C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\api.AssemblyInfoInputs.cache
+C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\api.AssemblyInfo.cs
+C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\api.csproj.CoreCompileInputs.cache
+C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\api.sourcelink.json
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\1044420\OneDrive - Conclusion\Desktop\project\FINSHARK\api\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
