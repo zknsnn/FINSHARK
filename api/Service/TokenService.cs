@@ -17,21 +17,29 @@ namespace api.Service
         // Configuration to access app settings
         private readonly IConfiguration _config;
         private readonly SymmetricSecurityKey _symmetricSecurityKey;
+
         // Constructor to inject configuration
         public TokenService(IConfiguration config)
         {
             _config = config;
-            _symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JWT:SigningKey"]));
+            _symmetricSecurityKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(_config["JWT:SigningKey"])
+            );
         }
 
         public string CreateToken(AppUser user)
-        {   // Define claims for the token
-            var claims = new List<Claim>{
+        { // Define claims for the token
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name, user.UserName),
                 new Claim(JwtRegisteredClaimNames.Email, user.Email),
-                new Claim(JwtRegisteredClaimNames.GivenName, user.UserName),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             };
             // Create signing credentials using the symmetric security key
-            var creds = new SigningCredentials(_symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
+            var creds = new SigningCredentials(
+                _symmetricSecurityKey,
+                SecurityAlgorithms.HmacSha256Signature
+            );
 
             // Define the token descriptor
             var tokenDescriptor = new SecurityTokenDescriptor

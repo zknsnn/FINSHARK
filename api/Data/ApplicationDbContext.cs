@@ -50,8 +50,8 @@ namespace api.Data
                     NormalizedName = "USER",
                 },
             };
+            builder.Entity<IdentityRole>().HasData(roles);
         }
-
 
     }
 }
