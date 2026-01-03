@@ -51,6 +51,11 @@ namespace api.Repository
                 .FirstOrDefaultAsync(s => s.Id == id);
         }
 
+        public Task<Stock?> GetBySymbolAsync(string symbol)
+        {
+            return _context.Stocks.FirstOrDefaultAsync(s => s.Symbol == symbol);
+        }
+
         public Task<List<Stock>> GetFilteredStocksAsync(QueryObjects queryObjects)
         {
             // Start with all stocks

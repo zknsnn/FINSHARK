@@ -18,7 +18,13 @@ namespace api.Repository
             _context = dbContext;
         }
 
-        
+        public async Task<Portfolio> CreateAsync(Portfolio portfolio)
+        {
+            await _context.Portfolios.AddAsync(portfolio);
+            await _context.SaveChangesAsync();
+            return portfolio;
+        }
+
         public async Task<List<Stock>> GetUserPortfolio(AppUser appUser)
         {
             return await _context
