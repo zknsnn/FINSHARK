@@ -63,13 +63,37 @@ namespace api.Controllers
             var portfolioModel = new Portfolio { StockId = stock.Id, AppUserId = appUser.Id };
 
             await _portfolioRepo.CreateAsync(portfolioModel);
-            // check model exist 
+            // check model exist
             if (portfolioModel == null)
                 return StatusCode(500, "Couldnt create");
             else
             {
                 return Created();
             }
+        }
+
+        [HttpDelete]
+        [Authorize]
+        public async Task<IActionResult> DeletePortfolio(string symbol)
+        {
+            var username = User.GetUsername();
+            var appUser = await _userManager.FindByNameAsync(username);
+            // find portfolio
+            var userPortfolio = await _portfolioRepo.GetUserPortfolio(appUser);
+            // filter portfolio
+            var filteredStock = userPortfolio
+                .Where(e => e.Symbol.ToLower() == symbol.ToLower())
+                .ToList();
+            if(filteredStock.Count() == 1)
+            {
+                _portfolioRepo.DeleteAsync(appUser,symbol);
+            }
+            else
+            {
+                return BadRequest("Portfolio can not find");
+            }
+            return Ok();
+            
         }
     }
 }
