@@ -86,7 +86,7 @@ namespace api.Controllers
                 .ToList();
             if(filteredStock.Count() == 1)
             {
-                _portfolioRepo.DeleteAsync(appUser,symbol);
+                await _portfolioRepo.DeleteAsync(appUser,symbol);
             }
             else
             {
